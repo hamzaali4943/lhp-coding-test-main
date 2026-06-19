@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Event;
 use App\Models\User;
+use App\Support\CityResolver;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,7 @@ class EventFactory extends Factory
         $lat = fake()->latitude();
         $lng = fake()->longitude();
         $startsAt = fake()->numberBetween(strtotime('-1 year'), strtotime('+1 year'));
+        $location = (new CityResolver)->resolve($lat, $lng);
 
         return [
             'user_id' => User::factory(),
@@ -27,8 +29,11 @@ class EventFactory extends Factory
             'created_time' => $startsAt,
             'latitude' => $lat,
             'longitude' => $lng,
+            'city' => $location['city'],
+            'country' => $location['country'],
+            'timezone' => $location['timezone'],
             'payload' => [
-                'name' => ucwords(fake()->words(3, true)),
+                'name' => ucwords(rtrim(fake()->sentence(3), '.')),
                 'category' => $type,
                 'venue' => ['name' => fake()->company(), 'capacity' => fake()->numberBetween(20, 50000)],
                 'location' => ['lat' => $lat, 'lng' => $lng],

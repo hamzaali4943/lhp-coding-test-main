@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Networking placeholder">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(35)">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <g fill="#ffffff" fill-opacity="0.10">
+    <circle cx="650" cy="120" r="160"/>
+    <circle cx="120" cy="430" r="120"/>
+  </g>
+  <text x="60" y="300" font-family="Instrument Sans, Segoe UI, sans-serif" font-size="120" font-weight="700" fill="#ffffff" fill-opacity="0.95">⬡</text>
+  <text x="60" y="400" font-family="Instrument Sans, Segoe UI, sans-serif" font-size="56" font-weight="700" fill="#ffffff" letter-spacing="1">Networking</text>
+  <text x="62" y="448" font-family="Instrument Sans, Segoe UI, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.8">Event photo 1</text>
+</svg>
